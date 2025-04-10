@@ -9,16 +9,16 @@ function signupUser(email, password) {
   }
   users.push({ email, password });
   localStorage.setItem("users", JSON.stringify(users));
-  alert("Signup successful!");
+  alert("Signup successful! Redirecting to login page...");
+  window.location.href = "login.html"; // Redirect to login page
 }
 //login
 function loginUser(email, password) {
-    const existingUser = users.find(user => user.email === email && user.password === password);
-    if (existingUser) {
-      localStorage.setItem("loggedInUser", email);
-      alert("Login successful!");
-      window.location.href = "products.html";
-    } else {
-      alert("Invalid credentials.");
-    }
+  const existingUser = users.find(user => user.email === email && user.password === password);
+  if (existingUser) {
+    localStorage.setItem("loggedInUser", email);
+    alert("Login successful!");
+    window.location.href = "product.html"; // this will redirect to the products page
+    alert("Invalid credentials.");
   }
+}

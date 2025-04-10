@@ -1,4 +1,9 @@
-fetch('data/products.json')
+
+const loggedInUser = localStorage.getItem("loggedInUser");
+if (!loggedInUser) {
+  window.location.href = "login.html";
+}
+fetch('..data/product.json')
   .then(response => response.json())
   .then(data => renderProducts(data));
 

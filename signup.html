@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+</head>
+<body>
+
+  <h2>Signup</h2>
+  <form id="signupForm">
+    <input type="email" id="signupEmail" placeholder="Enter email" required />
+    <input type="password" id="signupPassword" placeholder="Enter password" required />
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <script src="auth.js"></script>
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("signupEmail").value;
+      const password = document.getElementById("signupPassword").value;
+      signupUser(email, password);
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+      loginUser(email, password);
+    });
+  </script>
+</body>
+</html>
